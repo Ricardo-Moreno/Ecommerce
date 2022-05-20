@@ -1,9 +1,9 @@
-import { Link, useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const Item = ( {prod} ) => {
 
-    const { id } = useParams()
-    console.log(id)
+
+
   return (
       <div
             className='col-md-4'
@@ -15,15 +15,15 @@ const Item = ( {prod} ) => {
                 </div>
                 <div className="card-body">
                     <img src={prod.photo} alt='' className='w-50' />
-                    {prod.price}                                                            
+                    {prod.price}
                 </div>
                 <div className="card-footer">
                     <button className="btn btn-outline-primary btn-block">
                         Mas Informacion
-                    </button>                
+                    </button>
                 </div>
             </div>
-        </Link>                                                                               
+        </Link>
         </div>
     )
 }

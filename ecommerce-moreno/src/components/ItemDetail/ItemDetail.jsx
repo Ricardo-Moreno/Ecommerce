@@ -2,8 +2,8 @@ import Item from "../Item/Item"
 
 const ItemDetail = ({producto}) => {
   return (
-    <div className="row" >
-      {/*<div className="col">
+    /*<div className="row" >
+      <div className="col">
         <img className="" src={producto.photo} />
       </div>
       <div className="col">
@@ -11,9 +11,8 @@ const ItemDetail = ({producto}) => {
         <h2>{producto.category}</h2>
         <p>{producto.price}</p>
       </div>
-*/}
-      <Item prod={producto} />
-    </div>
+    </div>*/
+    <Item prod={producto} />
   )
 }
 

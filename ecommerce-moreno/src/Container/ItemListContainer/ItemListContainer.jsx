@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import ItemCount from "../../components/ItemCount/ItemCount"
 import ItemList from "../../components/ItemList/ItemList"
 import { getFetch } from "../../helpers/getFetch"
 
@@ -11,12 +12,12 @@ const ItemListContainer = () => {
 
     const { id } = useParams() 
 
-    useEffect(() => {
+    useEffect(() => { 
         if (id) {
-            getFetch()  // fetch llamada a una api  
+            getFetch() 
             .then(respuesta=> setProductos(respuesta.filter((prods) => prods.category === id)))
             .catch((err)=> console.log(err))
-            .finally(()=>setLoading(false))                             
+            .finally(()=>setLoading(false))
         } else {
             getFetch()  // fetch llamada a una api  
             .then(respuesta=> setProductos(respuesta))
@@ -24,6 +25,11 @@ const ItemListContainer = () => {
             .finally(()=>setLoading(false))                 
         }
     }, [id])
+
+const onAdd = (cant) => {
+    console.log(cant)
+}
+
     return (
         <div>
             { loading ? 
@@ -33,6 +39,7 @@ const ItemListContainer = () => {
                     <ItemList productos={productos} /> 
                 </div>
             }
+            <ItemCount initial={1} stock={5} onAdd={onAdd}/>
         </div>
 
     )
