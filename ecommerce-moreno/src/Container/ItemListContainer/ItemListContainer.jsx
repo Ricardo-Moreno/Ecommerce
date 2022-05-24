@@ -26,9 +26,7 @@ const ItemListContainer = () => {
         }
     }, [id])
 
-const onAdd = (cant) => {
-    console.log(cant)
-}
+
 
     return (
         <div>
@@ -39,7 +37,6 @@ const onAdd = (cant) => {
                     <ItemList productos={productos} /> 
                 </div>
             }
-            <ItemCount initial={1} stock={5} onAdd={onAdd}/>
         </div>
 
     )
