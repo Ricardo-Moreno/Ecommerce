@@ -23,11 +23,10 @@ const NavBar = () => {
         style={{ maxHeight: '100px' }}
         navbarScroll
       >
-        <NavLink to='/category/Arreglos'>Arreglos</NavLink>
         <Nav.Link href="#action2">CONOCENOS</Nav.Link>
         <NavDropdown title="PRODUCTOS" id="navbarScrollingDropdown">
-          <NavDropdown.Item href="#action3">ARREGLOS</NavDropdown.Item>
-          <NavDropdown.Item href="#action4">DESAYUNOS</NavDropdown.Item>
+          <NavDropdown.Item href="#action3"><Link to='/category/arreglos'>ARREGLOS</Link></NavDropdown.Item>
+          <NavDropdown.Item href="#action4"><Link to='/category/regalos'>DESAYUNOS</Link></NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item href="#action5">
             EVENTOS

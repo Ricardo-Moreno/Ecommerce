@@ -1,13 +1,14 @@
-import { useContext } from "react"
+//import { useContext } from "react"
 import { Link } from "react-router-dom"
-import { CartContext } from "../../context/CartContext"
-import ItemCount from "../ItemCount/ItemCount"
+//import { CartContext } from "../../context/CartContext"
+//import ItemCount from "../ItemCount/ItemCount"
 
 
 const Item = ( {prod} ) => {
+    
 
-const cartContext = useContext(CartContext)
-const { addToCart } = cartContext;
+//const cartContext = useContext(CartContext)
+//const { addToCart } = cartContext;
 
   return (
       <div
@@ -29,10 +30,10 @@ const { addToCart } = cartContext;
                 </div>
             </div>
         </Link>
-            <ItemCount
+          {/*  <ItemCount
             item =  { prod }
             onAdd = { addToCart } 
-            />
+            />*/}
         </div>
     )
 }
