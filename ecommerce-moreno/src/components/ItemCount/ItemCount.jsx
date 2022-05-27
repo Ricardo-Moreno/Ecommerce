@@ -1,18 +1,27 @@
 import React, { useState } from 'react'
 
-const ItemCount = ({initial, stock, onAdd}) => {
-const [ count, setcount] = useState(initial)
+const ItemCount = ({item, onAdd}) => {
+const [ count, setCount] = useState(1)
 
-const sumar = () => setcount(count + 1)
-const restar = () => setcount(count - 1)
+const addCount = (num) => {
+  setCount(count + num)
+}
+
 
   return (
-    <div>
-        { count } <br/>
-        <button onClick={sumar} className='btn btn-primary'>+</button>
-        <button onClick={restar} className='btn btn-primary'>-</button>
-        <br/>
-        <button onClick={() => onAdd (Count)} className='btn btn-primary'>Agregar al carrito</button>
+    <div className='count-container'>
+        <button 
+          onClick = {()=>{ addCount(-1) }}
+          disabled = { count === 1 ? true : false}
+        >-</button>
+        <div>{count}</div>
+        <button 
+          disabled = { count === item.stock ? true : false}
+          onClick = {()=>{ addCount(1) }}
+          >+</button>
+        <button
+          onClick = {()=>{ onAdd (item, qty) }} 
+          >Agregar al carrito</button>
     </div>
   )
 }

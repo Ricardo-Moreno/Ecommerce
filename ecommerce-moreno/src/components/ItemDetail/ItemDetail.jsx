@@ -1,15 +1,15 @@
 import Intercambiabilidad from "../intercambiabilidad/intercambiabilidad"
 import Item from "../Item/Item"
-import ItemCount from "../ItemCount/ItemCount"
+//import ItemCount from "../ItemCount/ItemCount"
 
 const ItemDetail = ({producto}) => {
 
   
 
-  const onAdd = (cant) => {
+  /*const onAdd = (cant) => {
     console.log(cant)
 }
-  
+  */
   return (
     /*<div className="row" >
       <div className="col">
@@ -23,7 +23,7 @@ const ItemDetail = ({producto}) => {
     </div>*/ <>
     <Item prod={producto} />
     <Intercambiabilidad />
-    <ItemCount initial={1} stock={5} onAdd={onAdd}/>
+    {/*<ItemCount initial={1} stock={5} onAdd={onAdd}/>*/}
     </>
   )
 }
