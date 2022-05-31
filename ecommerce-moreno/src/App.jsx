@@ -1,4 +1,4 @@
-import { useState } from 'react'
+//import { useState } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -7,14 +7,15 @@ import NavBar from './components/NavBar/NavBar'
 import Cart from './Container/Cart/Cart'
 import ItemListContainer from './Container/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './Container/ItemDetailContainer/ItemDetailcontainer'
-//import CartProvider from './context/CartContext/CartContext'
+import CartContextProvider from './context/CartContext'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+ // const [count, setCount] = useState(0)
 
-  return (
+  return ( 
     <BrowserRouter>
+    <CartContextProvider >
       <div>
         <NavBar/>
       <Routes>
@@ -28,6 +29,7 @@ function App() {
             <Route path='/*' element={<Navigate to='/' replace />}/>
         </Routes>
       </div>
+    </CartContextProvider>
     </BrowserRouter>
   )
 }
