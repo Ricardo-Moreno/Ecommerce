@@ -7,10 +7,12 @@ import { Form } from 'react-bootstrap'
 import { FormControl } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 import { Link, NavLink } from 'react-router-dom'
+import { useCartContext } from '../../context/CartContext'
 import CartWidget from '../CartWidget/CartWidget'
 
 
 const NavBar = () => {
+  const { cantidadTotal } = useCartContext()
   return (
       <div>
     <Navbar bg="light" expand="lg" >
@@ -47,6 +49,7 @@ const NavBar = () => {
       </Form>
     </Navbar.Collapse>
   </Container>
+  {cantidadTotal() !== 0 && cantidadTotal()}
 <CartWidget />
 </Navbar>
 </div>

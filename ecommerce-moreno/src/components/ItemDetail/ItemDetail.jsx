@@ -43,8 +43,8 @@ useEffect(() => {
       </div>
     </div>
     {/*<Item prod={producto} />*/}
-   {/* <ItemCount initial={1} stock={5} onAdd={onAdd} cambioBoton={cambioBoton} /> */}
-    <button onClick={()=>onAdd(4)}>Agregaaaar</button>
+   <ItemCount initial={1} stock={5} onAdd={onAdd} cambioBoton={cambioBoton} />
+    {/*<button onClick={()=>onAdd(4)}>Agregaaaar</button>*/}
     </>
         }
     </div>
